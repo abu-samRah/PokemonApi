@@ -1,6 +1,6 @@
 const express = require("express");
 
-const pokemonRouter = require("./routes/pokemon")
+const pokemonRouter = require("../routes/pokemon")
 const app = express();
 
 let port = process.env.PORT || 3000;
