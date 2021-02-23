@@ -1,15 +1,16 @@
 const express = require("express");
 const app = express();
 const data = require("./pokemon.json")
+const pokemons = require("./utilities/index")
 
 let port = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
-    res.send("hollla")
+    res.send("holas")
 });
 
 app.get("/pokemon", (req, res) => {
-    res.send(data)
+    res.send(pokemons())
 });
 
 app.listen(port, () => {
