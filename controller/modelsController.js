@@ -6,8 +6,18 @@ const getPokemons= () => {
 
 const getPokemon = (pokemonId) => {
     const pokemons = getPokemons();
-    const memebr = pokemons.find((Pokemon) => Pokemon?.id == pokemonId);
+    const memebr = pokemons.find((Pokemon) => Pokemon.id == pokemonId);
     return memebr;
 };
 
-module.exports = getPokemon;
+const searchPokemon = (pokemonName) => {
+    const pokemons = getPokemons();
+    const memebr = pokemons.find((Pokemon) => Pokemon.name.english.toLowerCase() == pokemonName.toLowerCase());
+    return memebr;
+};
+
+const pokemonController = {
+    getPokemon,
+    searchPokemon
+}
+module.exports = pokemonController;

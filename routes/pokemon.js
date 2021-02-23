@@ -1,9 +1,10 @@
 const express = require("express");
-const getPokemon = require("../controller/pokemonController")
+const pokemonController = require("../controller/pokemonController")
 
 const router = express.Router();
 
-router.get('/:id', getPokemon);
+router.get('/:id', pokemonController.getPokemon);
+router.get('/search/:name', pokemonController.searchPokemon);
 
 module.exports = router;
 
